@@ -1,0 +1,11 @@
+wordpress:
+  build: ./wp-custom/
+  links:
+    - db:mysql
+  ports:
+    - 0:80
+
+db:
+  image: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: example
