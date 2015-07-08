@@ -23,4 +23,40 @@ If you are running on a mac, your docker daemon will be running inside a boot2do
 
 ## Running in DigitalOcean (simple)
 
-## Running in EC2 (slightly more complicated)
+#### Prerequisites
+1. You have a http://www.digitalocean.com account. Get one, it is awesome.
+2. You've generated an API token.
+
+#### Creating, Running, Scaling, and Destroying the Environment
+````
+# Create a box on DO
+docker-machine create \
+  --driver digitalocean \
+  --digitalocean-region "sfo1" \
+  --digitalocean-size "4gb" \
+  --digitalocean-access-token &lt;INSERT ACCESS TOKEN&gt; \
+  wp-demobox
+
+# setup your environment variables
+eval $(docker-machine env wp-demobox)
+
+# Start the services
+docker-compose up
+
+# Set the number of WP instances you need
+docker-compose scale wordpress=3 # or 50 depending on your class size
+
+# Discover the IP of your DO droplet
+docker-machine ip 
+
+# Shows you all the containers running, and the port they are bound to
+docker-compose ps 
+
+# When you're done, kill the droplet
+docker-machine rm wp-demobox
+
+# Unset the env vars for that machine you just destroyed
+eval "$(docker-machine env -u)"
+````
+
+After the `docker-compose ps` command, you will have a list of all the ports that the WordPress instances are bound on. These will likely be sequential starting from some high port number. Each of these ports will be accessible on the host's IP address.
