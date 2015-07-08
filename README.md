@@ -47,7 +47,7 @@ docker-compose up -d
 docker-compose scale wordpress=3 # or 50 depending on your class size
 
 # Discover the IP of your DO droplet
-docker-machine ip 
+docker-machine ip wp-demobox
 
 # Shows you all the containers running, and the port they are bound to
 docker-compose ps 
