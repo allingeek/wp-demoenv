@@ -34,7 +34,7 @@ docker-machine create \
   --driver digitalocean \
   --digitalocean-region "sfo1" \
   --digitalocean-size "4gb" \
-  --digitalocean-access-token &lt;INSERT ACCESS TOKEN&gt; \
+  --digitalocean-access-token <INSERT ACCESS TOKEN> \
   wp-demobox
 
 # setup your environment variables
