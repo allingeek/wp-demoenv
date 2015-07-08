@@ -41,7 +41,7 @@ docker-machine create \
 eval $(docker-machine env wp-demobox)
 
 # Start the services
-docker-compose up
+docker-compose up -d
 
 # Set the number of WP instances you need
 docker-compose scale wordpress=3 # or 50 depending on your class size
