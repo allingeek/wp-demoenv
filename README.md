@@ -19,7 +19,7 @@ This docker-compose based environment will create a WordPress demo environment. 
 wpexample_db_1          /docker-entrypoint.sh mysqld     Up      3306/tcp              
 wpexample_wordpress_1   /entrypoint.sh apache2-for ...   Up      0.0.0.0:32777->80/tcp 
 ````
-If you are running on a mac, your docker daemon will be running inside a boot2docker virtual machine. To access your WP instance you need to discover the IP address of the virtual machine: `boot2docker ip`. Open a web browser and access that IP address and the port listed for the WP instance. In the above example, the port is 32777. The URL you would access in this case is http://<ip address>:32777/.
+If you are running on a mac, your docker daemon will be running inside a boot2docker virtual machine. To access your WP instance you need to discover the IP address of the virtual machine: `boot2docker ip`. Open a web browser and access that IP address and the port listed for the WP instance. In the above example, the port is 32777. The URL you would access in this case is http://&lt;ip address&gt;:32777/.
 
 ## Running in DigitalOcean (simple)
 
